@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Church of Pentecost
+title = Church of Pentecost 
 
 # (str) Package name
 package.name = cop
