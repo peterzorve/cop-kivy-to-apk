@@ -1,7 +1,7 @@
 [app]
 
 # (str) Church of Pentecost 
-title = Church of Pentecost
+title = ChurchOfPPentecost
 
 # (str) Package name
 package.name = cop
@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,kv,ttf,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,images/*.png/*.ttf
+source.include_patterns = images/*.png,font/*.ttf
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,pyrebase4,pandas
+requirements = python3,kivy==2.2.1,kivymd==1.1.1,pyrebase4,pandas==2.1.2,pillow==10.1.0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -81,7 +81,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-#android.presplash_color = #FFFFFF
+android.presplash_color = #FFFFFF
 
 # (string) Presplash animation using Lottie format.
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
