@@ -1,0 +1,1178 @@
+Screen_Manger:
+    name: "name_screen_manager"
+
+    
+    HomePage
+    AddChurchMemberPage
+    MemberCheckMembersInformationPage
+    MemberChurchInformationPage
+    ChurchMemberProfilePage
+    CheckMembersInformationPage
+    ChurchInformationPage
+    UpdateAfterService
+    SignupPage
+    SendEmailVerificationScreen
+    AdministrationPage 
+    UpdateAfterService
+
+
+#=================================================================================================================================== 
+#===    9. MemberChurchInformationPage  ============================================================================================
+#=================================================================================================================================== 
+<MemberChurchInformationPage>
+    name : "name_memberchurchinformation" 
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.7, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            MDLabel:
+                text: "Church Information"
+                font_size: "14dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .95}
+            BoxLayout:
+                size_hint:  .7, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.88}
+                spacing: "10dp"
+                MDRectangleFlatIconButton:
+                    text: "Show"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#ffffff"
+                    line_color: "#395aff"
+                    md_bg_color: "#395aff"
+                    line_width: 1
+                    on_release: root.display_table()
+                MDRectangleFlatIconButton:
+                    text: "Close"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#0000ff"
+                    line_color: "#0000ff"
+                    md_bg_color: "#ffffff"
+                    line_width: 1
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: root.dismiss_table()
+                MDRectangleFlatIconButton:
+                    text: "Back"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#ff0000"
+                    line_color: "#ff0000"
+                    md_bg_color: "#ffcbd1"
+                    line_width: 1
+                    on_release: root.go_back()
+                    # on_release: app.root.current =  "name_memberprofile"
+
+
+#===================================================================================================================================
+#===    8. MemberCheckMembersInformationPage    ====================================================================================
+#=================================================================================================================================== 
+<MemberCheckMembersInformationPage> 
+    name : "name_membercheckmemberinformation"
+    id_type_of_member_by_member: id_type_of_member_by_member
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.7, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            MDLabel:
+                text: "Members' Information"
+                font_size: "14dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .98}
+            BoxLayout:
+                size_hint:  .7, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.92}
+                spacing: "10dp"
+                Spinner:
+                    id: id_type_of_member_by_member
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "12dp" 
+                    size_hint_x: .7
+                    text: "Members"
+                    values: ["Members", "Presbytery"]
+                    background_color: "#73e6ff"
+                    color: 1, 1, 1, 1 
+                    size_hint_y: None 
+                    height: "35dp"
+            BoxLayout:
+                size_hint:  .7, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.84}
+                spacing: "10dp"                
+                MDRectangleFlatIconButton:
+                    font_size: "10dp"
+                    text: "Show"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff"
+                    line_width: 2
+                    on_release: root.display_table()
+                MDRectangleFlatIconButton:
+                    font_size: "10dp"
+                    text: "Close"
+                    line_width: 2
+                    size_hint_x: 0.3
+                    text_color: "#bf370f" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#bf370f"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: root.dismiss_table()
+                MDRaisedButton:
+                    text: "Back"
+                    font_size: "10dp"
+                    line_width: 2
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    text_color: "#276221" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#276221"
+                    on_release: root.go_back()
+                    on_release: app.root.current =  "name_memberprofile"
+
+
+#=================================================================================================================================== 
+#===    7.  ChurchMemberProfilePage     ============================================================================================
+#===================================================================================================================================
+<ChurchMemberProfilePage>:
+    name : "name_memberprofile"
+    id_welcome_member : id_welcome_member 
+    id_email_phonenumber_member: id_email_phonenumber_member
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.8, 0.8 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            MDLabel: 
+                id: id_welcome_member
+                font_size: "14dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#FF5623"
+                pos_hint: {"center_x":.5, "center_y": .95}
+
+            MDLabel: 
+                id: id_email_phonenumber_member            
+                font_size: "12dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .90}
+            BoxLayout:
+                size_hint:  .8, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":.80}
+                spacing: "10dp" 
+                MDRectangleFlatIconButton:
+                    text: "Church's Information"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff" 
+                    line_width: 2
+                    on_release: app.root.current =  "name_memberchurchinformation"
+                MDRectangleFlatIconButton:
+                    text: "Member's Information"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff"
+                    line_width: 2
+                    on_release: app.root.current =  "name_membercheckmemberinformation"
+            BoxLayout:
+                size_hint:  .8, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":.70}
+                spacing: "10dp"
+                MDRectangleFlatIconButton:
+                    text: "Logout"
+                    font_size: "10dp"
+                    size_hint_x: 0.4
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    text_color: "#ff0000" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#ff0000"
+                    line_width: 2
+                    on_release: app.root.current =  "name_homepage"
+
+
+#=================================================================================================================================== 
+#===    6. CheckMembersInformationPage  ============================================================================================
+#=================================================================================================================================== 
+<CheckMembersInformationPage> 
+    name : "name_checkmemberinformation"
+    id_type_of_member: id_type_of_member
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.7, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            MDLabel:
+                text: "Church Members' Information"
+                font_size: "16dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .98}
+            BoxLayout:
+                size_hint:  .7, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.92}
+                spacing: "10dp"
+                Spinner:
+                    id: id_type_of_member
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "12dp" 
+                    size_hint_x: .7
+                    text: "Members"
+                    values: ["Members", "Presbytery"]
+                    background_color: "#73e6ff"
+                    color: 1, 1, 1, 1 
+                    size_hint_y: None 
+                    height: "35dp"
+            BoxLayout:
+                size_hint:  .7, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.84}
+                spacing: "10dp"
+                MDRectangleFlatIconButton:
+                    font_size: "10dp"
+                    text: "Show"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff"
+                    line_width: 1
+                    on_release: root.display_table()
+                MDRectangleFlatIconButton:
+                    font_size: "10dp"
+                    text: "Close"
+                    line_width: 1
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff"
+                    on_release: root.dismiss_table()
+            # BoxLayout:
+            #     size_hint:  .7, None
+            #     height: "30dp"
+            #     pos_hint: {"center_x":.5,"center_y":0.05}
+            #     spacing: "10dp"
+                MDRaisedButton:
+                    text: "Back"
+                    font_size: "10dp"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    text_color: "#0000ff" 
+                    md_bg_color: "#ffffff"
+                    line_color: "#0000ff"
+                    on_release: root.go_back()
+                    # on_release: app.root.current =  "name_administrationpage"
+
+
+#=================================================================================================================================== 
+#===    5. ChurchInformationPage  ============================================================================================
+#=================================================================================================================================== 
+<ChurchInformationPage>
+    name : "name_church_information" 
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.7, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            MDLabel:
+                text: "Church Information"
+                font_size: "16dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .95}
+            BoxLayout:
+                size_hint:  .9, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":0.87}
+                spacing: "8dp"
+                MDRectangleFlatIconButton:
+                    text: "Show"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    size_hint_x: 0.3
+                    font_size: "10dp"
+                    text_color: "#ffffff" 
+                    md_bg_color: "#0000ff"
+                    line_color: "#0000ff"
+                    on_release: root.display_table()
+                MDRectangleFlatIconButton:
+                    text: "Close"
+                    size_hint_x: 0.3
+                    font_size: "10dp"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    text_color: "#0000ff" 
+                    line_color: "#0000ff" 
+                    md_bg_color: "#99ccff" 
+                    line_width: 2
+                    on_release: root.dismiss_table()
+                MDRectangleFlatIconButton:
+                    text: "Back"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    text_color: "#ff0000" 
+                    line_color: "#ff0000" 
+                    md_bg_color: "#ffefea" 
+                    line_width: 2
+                    size_hint_x: 0.3
+                    font_size: "10dp"
+                    on_release: root.go_back()
+                    # on_release: app.root.current =  "name_administrationpage"
+
+
+#===================================================================================================================================
+#===    4.  UpdateAfterService      ============================================================================================
+#===================================================================================================================================
+<UpdateAfterService>:
+    name: "name_upload_information"
+    id_weekevent: id_weekevent 
+    id_attendacemen: id_attendacemen
+    id_attendacewomen: id_attendacewomen
+    id_attendacechildren: id_attendacechildren
+    id_tithe: id_tithe
+    id_offertory: id_offertory
+    id_visitors: id_visitors 
+    id_description: id_description
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.8, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        ScrollView:
+            size: self.size 
+            do_scroll_x: False
+            FloatLayout:
+                orientation: "vertical"
+                MDLabel:
+                    text: "Update After Service"
+                    font_size: "16dp"
+                    halign: "center"
+                    font_name: 'fonts/Montserrat-Bold.ttf'
+                    color: "#000000"
+                    pos_hint: {"center_x":.5, "center_y": .95}
+                Spinner:
+                    id: id_weekevent
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "14dp" 
+                    size_hint_x: .7
+                    text: "Week Event"
+                    values: ["Communion Sunday", "Local Week", "District Week", "Area Week", "Women Week", "Men Week", "Children's Week", "Evangelism", "Others" ]
+                    pos_hint: {"center_x":.5, "center_y": .90}
+                    color: "#ffffff" 
+                    halign: "left"
+                    size_hint: .7, .05
+                BoxLayout:
+                    size_hint:  .7, None
+                    height: "30dp"
+                    pos_hint: {"center_x":.5,"center_y":0.80}
+                    spacing: "8dp"
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_attendacemen 
+                        hint_text: "Men"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" 
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp"
+                        input_filter: 'int'
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_attendacewomen 
+                        hint_text: "Women"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" #recommended size for andoroid 14 to 16 dp
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp" 
+                        input_filter: 'int'
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_attendacechildren  
+                        hint_text: "Children"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" #recommended size for andoroid 14 to 16 dp
+                        size_hint_x: .68
+                        # pos_hint: {"center_x":.5, "center_y": .55} 
+                        hint_font_size: "10dp"
+                        write_tab: False 
+                        input_filter: 'int'
+                BoxLayout:
+                    size_hint:  .7, None
+                    height: "30dp"
+                    pos_hint: {"center_x":.5,"center_y":0.72}
+                    spacing: "8dp"
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_tithe 
+                        hint_text: "Tithe"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" 
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp"
+                        input_filter: 'float'
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_offertory 
+                        hint_text: "Offertory"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" 
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp"
+                        input_filter: 'float'
+                    MDTextFieldRect:
+                        height: "25dp"
+                        id: id_visitors 
+                        hint_text: "Visitors"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" 
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp"
+                        input_filter: 'int'
+                BoxLayout:
+                    size_hint:  .7, None
+                    height: "80dp"
+                    pos_hint: {"center_x":.5,"center_y":0.60}
+                    spacing: "8dp"
+                    MDTextFieldRect:
+                        height: "70dp"
+                        id: id_description 
+                        hint_text: "Description"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "10dp" 
+                        size_hint_x: .68
+                        write_tab: False 
+                        hint_font_size: "10dp"
+                        multiline: True 
+                MDRectangleFlatIconButton:
+                    text: "Submit"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    pos_hint: {"center_x":.5,"center_y":.45}
+                    text_color: "#ffffff" 
+                    md_bg_color: "#0000ff"
+                    line_color: "#0000ff"
+                    font_size: "12dp"
+                    size_hint: .7, None
+                    on_release: root.submit() 
+                BoxLayout:
+                    size_hint:  .7, None
+                    height: "30dp"
+                    pos_hint: {"center_x":.5,"center_y":.35}
+                    spacing: "10dp"
+                    MDRectangleFlatIconButton:
+                        text: "Clear"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "12dp"
+                        size_hint_x: 0.4
+                        text_color: "#0000ff" 
+                        md_bg_color: "#ffffff"
+                        line_color: "#0000ff"
+                        line_width: 1
+                        on_release: root.clear_information() 
+                    MDRectangleFlatIconButton:
+                        text: "Go back"
+                        font_name: 'fonts/Montserrat-Regular.ttf'
+                        font_size: "12dp"
+                        size_hint_x: 0.4
+                        text_color: "#ff0000" 
+                        md_bg_color: "#ffffff"
+                        line_color: "#ff0000"
+                        line_width: 1
+                        on_release: root.go_back() 
+
+
+#=================================================================================================================================== 
+#====   3.  AddChurchMemberPage  ========================================================================================================
+#===================================================================================================================================
+<AddChurchMemberPage>
+    id: "id_add_student"
+    name : "name_add_student"  
+
+    # id_firstname: id_firstname
+    # id_lastname: id_lastname
+    # id_phonenumber: id_phonenumber
+    # id_emailaddress: id_emailaddress
+    id_membertype: id_membertype
+    id_generate_code: id_generate_code
+    id_generated_code_signup: id_generated_code_signup
+
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(400)
+        size_hint: 0.6, 0.8 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            orientation: "vertical"
+            MDLabel:
+                text: "Generate Registration Code"
+                font_size: "16dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .96}
+            # MDTextField:
+            #     id: id_firstname
+            #     hint_text: "Firstname"
+            #     font_name: 'fonts/Montserrat-Regular.ttf'
+            #     font_size: "14dp" 
+            #     size_hint_x: .68
+            #     pos_hint: {"center_x":.5, "center_y": .80}
+            #     write_tab: False 
+            # MDTextField:
+            #     id: id_lastname 
+            #     hint_text: "Lastname"
+            #     font_name: 'fonts/Montserrat-Regular.ttf'
+            #     font_size: "14dp" 
+            #     size_hint_x: .68
+            #     pos_hint: {"center_x":.5, "center_y": .70}
+            #     write_tab: False 
+            # MDTextField:
+            #     id: id_phonenumber 
+            #     hint_text: "Phone Number"
+            #     font_name: 'fonts/Montserrat-Regular.ttf'
+            #     font_size: "14dp" 
+            #     size_hint_x: .68
+            #     pos_hint: {"center_x":.5, "center_y": .60} 
+            #     write_tab: False 
+            #     input_filter: 'int'
+            # MDTextField:
+            #     id: id_emailaddress 
+            #     hint_text: "Email address"
+            #     font_name: 'fonts/Montserrat-Regular.ttf'
+            #     font_size: "14dp"
+            #     size_hint_x: .68
+            #     pos_hint: {"center_x":.5, "center_y": .50} 
+            #     write_tab: False 
+            Spinner:
+                id: id_membertype
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_size: "14dp" 
+                size_hint_x: .7
+                text: "Select Member"
+                values: ["Elder", "Deacon",  "Deaconness", "Member"]
+                pos_hint: {"center_x":.5, "center_y": .86}
+                color: 156/255, 163/255, 173/255, 1 
+                halign: "left"
+                size_hint: .7, .07
+            MDLabel:
+                id: id_generated_code_signup
+                text: ""
+                font_size: "16dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .77}
+            MDRectangleFlatIconButton:
+                id: id_generate_code
+                text: "Generate code"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                pos_hint: {"center_x":.5,"center_y":.66}
+                text_color: "#ffffff" 
+                md_bg_color: "#0000ff"
+                line_color: "#0000ff"
+                font_size: "10dp"
+                font_size: "10dp"
+                size_hint: .7, None
+                # line_width: 1
+                on_release: root.generate_code() 
+            MDRectangleFlatIconButton:
+                text: "Go back"
+                size_hint:  .7, None
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                pos_hint: {"center_x":.5,"center_y":.56}
+                text_color: "#0000ff" 
+                md_bg_color: "#ffffff"
+                line_color: "#0000ff"
+                font_size: "10dp"
+                on_release: root.go_back() 
+
+#========================================================================================================================================
+#===    2.  AdministrationPage  =========================================================================================================
+#========================================================================================================================================
+<AdministrationPage>:
+    name: "name_administrationpage"
+    id_welcome_presibery_member: id_welcome_presibery_member 
+    id_email_phonenumber: id_email_phonenumber
+    CoverImage:
+        source: "images/cop_background.png"
+
+        
+        canvas:
+            Color:
+                rgba: 0, 0, 0, .7
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(450)
+        size_hint: 0.9, 0.9 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        FloatLayout:
+            size_hint_max_x: dp(500)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5} 
+            
+            MDLabel: 
+                id: id_welcome_presibery_member
+                font_size: "14dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#FF5623"
+                pos_hint: {"center_x":.5, "center_y": .95}
+
+            MDLabel: 
+                id: id_email_phonenumber
+                font_size: "12dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .90}
+
+            BoxLayout:
+                size_hint:  .8, None
+                height: "20dp"
+                pos_hint: {"center_x":.5,"center_y":.80}
+                spacing: "10dp" 
+
+                MDRectangleFlatIconButton:
+                    text: "Church service update"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#395aff"
+                    line_color: "#395aff"
+                    line_width: 1
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: app.root.current =  "name_upload_information" 
+                MDRaisedButton:
+                    text: "Church's information"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#ffffff"
+                    line_color: "#395aff"
+                    line_width: 1
+                    md_bg_color: "#395aff"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: app.root.current =  "name_church_information" 
+            BoxLayout:
+                size_hint:  .8, None
+                height: "30dp"
+                pos_hint: {"center_x":.5,"center_y":.7}
+                spacing: "10dp" 
+                MDRaisedButton:
+                    text: "Generate a signup code"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#ffffff"
+                    line_color: "#395aff"
+                    md_bg_color: "#395aff"
+                    line_width: 1
+                    
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: app.root.current =  "name_add_student"
+
+                MDRectangleFlatIconButton:
+                    text: "Member's information"
+                    size_hint_x: 0.4
+                    font_size: "10dp"
+                    text_color: "#395aff"
+                    line_color: "#395aff"
+                    line_width: 1
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    on_release: app.root.current =  "name_checkmemberinformation"
+            # BoxLayout:
+            #     size_hint:  .7, None
+            #     height: "30dp"
+            #     pos_hint: {"center_x":.5,"center_y":.35}
+            #     spacing: "10dp" 
+            #     MDRaisedButton:
+            #         text: "Expenses"
+            #         size_hint_x: 0.2
+            #         font_size: "12dp"
+            #         font_name: 'fonts/Montserrat-Regular.ttf'
+                    # on_release: app.root.current =  "name_add_student"
+            MDRectangleFlatIconButton:
+                text: "Logout"
+                pos_hint: {'center_x':0.5, "y":0.58}
+                size_hint: 0.8, 0.03
+                text_color: "#ff0000"
+                font_size: "10dp"
+                md_bg_color: "#fdf5e2"
+                line_color: "#ff0000"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                on_release: app.root.current =  "name_homepage"
+                line_width: 1
+
+
+
+
+
+
+
+#===================================================================================================================================
+#=== 2. SIGNUP SCREEN  ===================================================================================================================
+#===================================================================================================================================
+<SignupPage>:
+    name: "name_signup_homepage"
+    id_signup_fullname: id_signup_fullname 
+    id_signup_phonenumber: id_signup_phonenumber 
+    id_signup_registration_code: id_signup_registration_code
+    id_signup_email : id_signup_email 
+    id_signup_password: id_signup_password 
+    id_signup_password_confirm: id_signup_password_confirm 
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(400)
+        size_hint: 0.8, 0.9
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 3
+        orientation: "vertical"
+        FloatLayout:
+            orientation: "vertical"
+            MDLabel:
+                text: "Create an account"
+                font_size: "16dp"
+                halign: "center"
+                font_name: 'fonts/Montserrat-Bold.ttf'
+                color: "#000000"
+                pos_hint: {"center_x":.5, "center_y": .94} 
+            MDTextFieldRect:
+                id: id_signup_fullname
+                height: "25dp"
+                hint_text: "Full name"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": .86}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            MDTextFieldRect:
+                id: id_signup_phonenumber
+                height: "25dp"
+                hint_text: "Phone number"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": .78}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            MDTextFieldRect:
+                id: id_signup_registration_code
+                height: "25dp"
+                hint_text: "Registration code"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": .70}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            MDTextFieldRect:
+                id: id_signup_email
+                height: "25dp"
+                hint_text: "Email"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": 0.62}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            MDTextFieldRect:
+                id: id_signup_password
+                height: "25dp"
+                hint_text: "Password"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": 0.54}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            MDTextFieldRect:
+                id: id_signup_password_confirm
+                height: "25dp"
+                hint_text: "Confirm password"
+                icon_left: "account"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": 0.46}
+                write_tab: False       
+                line_width: 2
+                line_color_normal: (0, 0, 0, 1)
+                hint_font_size: "10dp"
+            BoxLayout:
+                size_hint: .7, None
+                height: "20dp"
+                pos_hint: {"center_x":.5, "center_y": .38}
+                spacing: "5dp"
+                MDCheckbox:
+                    id: id_check_box 
+                    size_hint: None, None
+                    width: "20dp"
+                    height: "15dp"
+                    pos_hint: {"center_x":.5, "center_y": .5}
+                    on_press:
+                        id_signup_password.password = False if id_signup_password.password == True else True 
+                        id_signup_password.icon_left = "eye" if id_signup_password.icon_left == "eye-off" else "eye-off"
+                        id_signup_password_confirm.password = False if id_signup_password_confirm.password == True else True 
+                        id_signup_password_confirm.icon_left = "eye" if id_signup_password_confirm.icon_left == "eye-off" else "eye-off"
+                MDLabel:
+                    text: "Show Password"
+                    pos_hint: {"center_x":.5, "center_y": .5}
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "10dp"
+                    on_ref_press:
+                        id_check_box.active = False if id_check_box.active == True else True
+                        id_signup_password.password = False if id_signup_password.password == True else True 
+                        id_signup_password.icon_right = "eye" if id_signup_password.icon_right == "eye-off" else "eye-off"
+            MDRaisedButton:
+                text: "Register"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                pos_hint: {"center_x":.5,"center_y":.29}
+                size_hint: .7, None 
+                font_size: "10dp"
+                md_bg_color: "#395aff"  
+                text_color: "white"
+                on_release: root.signup() 
+            BoxLayout:
+                size_hint:  .7, None
+                height: "10dp"
+                pos_hint: {"center_x":.5,"center_y":.18}
+                spacing: "2dp"
+                MDRectangleFlatIconButton:
+                    text: "Alright have account?  Signin"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    # pos_hint: {"center_x":.5,"center_y":.15}
+                    size_hint: 1, None
+                    font_size: "10dp" 
+                    text_color: "395aff"
+                    line_color: "395aff"
+                    line_width: 2
+                    on_release: root.already_exit() 
+            BoxLayout:
+                size_hint:  .7, None
+                height: "10dp"
+                pos_hint: {"center_x":.5,"center_y":.08}
+                spacing: "2dp"
+                MDFlatButton:
+                    text: "Send verification code again?"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "10dp"
+                    size_hint_x: 1 
+                    md_bg_color: "#ffb09c" 
+
+
+
+<SendEmailVerificationScreen>:
+    name: "name_send_email_verificatiob"
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(400)
+        size_hint: 0.8, 0.9
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        ScrollView:
+            size_hint_y:.78
+            background_color:1,1,1,1
+            pos_hint:{"x":0,"y":.2}
+            do_scroll_x:False
+            do_scroll_y:True
+            BoxLayout:
+                orientation:'vertical'
+                # size:(root.width,root.height)
+                # height:self.minimum_height
+                size_hint: 0.7, None
+                pos_hint:{"top": 1}
+                # cols:2
+                spacing:3
+
+#===================================================================================================================================
+#=== 1. HomePage ===================================================================================================================
+#===================================================================================================================================
+<HomePage>:
+    name: "name_homepage"
+    id_login_email: id_login_email
+    id_login_password: id_login_password
+    # id_dropdown_menu: id_dropdown_menu 
+    CoverImage:
+        source: "images/cop_background.png"
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    MDCard:
+        size_hint_max_x: dp(400)
+        size_hint: 0.8, 0.8 
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical" 
+
+        FloatLayout:
+            orientation: "vertical"
+            Image:
+                source:"images/cop_logo.png"
+                size_hint_x: 0.45
+                # allow_stretch: True
+                pos_hint: {"center_x":.5, "center_y": .8}  
+
+            BoxLayout:
+                size_hint:  0.96, None
+                height: "10dp"
+                pos_hint: {"center_x":.5,"center_y":.92}
+                # spacing: "2dp"
+                MDRectangleFlatIconButton:
+                    text: "Church of Pentecost - Akumadan Englsih Assembly"
+                    font_name: 'fonts/Montserrat-Bold.ttf'
+                    # pos_hint: {"center_x":.5,"center_y":.15}
+                    size_hint: 1, None
+                    font_size: "10dp" 
+                    text_color: "#395aff"
+                    line_color: "#ffffff"
+                    line_width: 3
+                    # on_release: root.already_exit() 
+
+#===========================================================================================================
+            MDTextField:
+                id: id_login_email
+                # height: "30dp"
+                hint_text: "Email"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                font_size: "10dp" 
+                size_hint: .7, None 
+                pos_hint: {"center_x":.5, "center_y": 0.60}
+                on_text: self.text = self.text.replace(" ", "")
+                write_tab: False       
+                # line_width: 2
+                line_color_normal: (0, 0, 1, 0.7)
+                hint_font_size: "10dp"
+                mode: "rectangle"
+            MDTextField:
+                id: id_login_password 
+                hint_text: "Password"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                font_name_hint_text: 'fonts/Montserrat-Regular.ttf'
+                password: True 
+                icon_right: "eye-off"
+                font_size: "10dp" #recommended size for andoroid 14 to 16 dp
+                size_hint_x: .7
+                pos_hint: {"center_x":.5, "center_y": .50}
+                on_text: self.text = self.text.replace(" ", "")
+                line_color_normal: (0, 0, 1, 0.7)
+                write_tab: False 
+                mode: "rectangle"
+            BoxLayout:
+                size_hint: .7, None
+                height: "20dp"
+                pos_hint: {"center_x":.5, "center_y": .40}
+                spacing: "5dp"
+                MDCheckbox:
+                    id: cb 
+                    size_hint: None, None
+                    width: "20dp"
+                    height: "15dp"
+                    pos_hint: {"center_x":.5, "center_y": .5}
+                    on_press:
+                        id_login_password.password = False if id_login_password.password == True else True 
+                        id_login_password.icon_right = "eye" if id_login_password.icon_right == "eye-off" else "eye-off"
+                MDLabel:
+                    text: "Show Password"
+                    pos_hint: {"center_x":.5, "center_y": .5}
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "10dp"
+                    on_ref_press:
+                        cb.active = False if cb.active == True else True
+                        id_login_password.password = False if id_login_password.password == True else True 
+                        id_login_password.icon_right = "eye" if id_login_password.icon_right == "eye-off" else "eye-off"
+            MDRaisedButton:
+                text: "Login"
+                font_name: 'fonts/Montserrat-Regular.ttf'
+                pos_hint: {"center_x":.5,"center_y":.33}
+                size_hint: .7, None
+                font_size: "10dp"
+                md_bg_color: "#395aff"  
+                text_color: "white"
+                on_release: root.login() 
+
+            BoxLayout:
+                size_hint:  .7, None
+                height: "10dp"
+                pos_hint: {"center_x":.5,"center_y":.20}
+                spacing: "2dp"
+                MDRectangleFlatIconButton:
+                    text: "Do not have account?  Signup"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    # pos_hint: {"center_x":.5,"center_y":.15}
+                    size_hint: 1, None
+                    font_size: "10dp" 
+                    text_color: "395aff"
+                    line_color: "395aff"
+                    line_width: 1
+                    on_release: root.signup() 
+            BoxLayout:
+                size_hint:  .7, None
+                height: "10dp"
+                pos_hint: {"center_x":.5,"center_y":.10}
+                spacing: "2dp"
+                MDFlatButton:
+                    text: "Forgot password"
+                    font_name: 'fonts/Montserrat-Regular.ttf'
+                    font_size: "10dp"
+                    size_hint_x: 1 
+                    md_bg_color: "#ffb09c" 
+                    on_release: root.forget_password()
+
+
+<CoverImage@CoverBehavior+Image>:
+    reference_size: self.texture_size
+
+#================================================================================================================
+
+# "images/cop_background.png"
