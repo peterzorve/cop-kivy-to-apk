@@ -1,7 +1,7 @@
 [app]
 
-# (str) Church of Pentecost 
-title = ChurchOfPPentecost
+# (str) Title of your application
+title = Church of Pentecost
 
 # (str) Package name
 package.name = cop
@@ -13,10 +13,10 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,kv,ttf,png,jpg,kv,atlas
+source.include_exts = py,png,ttf,kv,atlas
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = images/*.png,font/*.ttf
+source.include_patterns = images/*.png,fonts/*.ttf
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -37,17 +37,17 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.2.1,kivymd==1.1.1,pyrebase4,pandas==2.1.2,pillow==10.1.0
+requirements = python3,kivy==2.2.1,kivymd==1.1.1,pandas==2.1.2,pyrebase4==4.7.1,pillow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/images/cop_logo.png
+presplash.filename = %(source.dir)s/image/cop_logo.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = %(source.dir)s/images/cop_logo.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
@@ -81,7 +81,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-android.presplash_color = #FFFFFF
+#android.presplash_color = #FFFFFF
 
 # (string) Presplash animation using Lottie format.
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
